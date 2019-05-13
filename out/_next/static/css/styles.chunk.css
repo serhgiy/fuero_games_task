@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800|Source+Sans+Pro);
+/*
+ * TYPOGRAPHY
+ */
+body {
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 400; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif !important !important;
+  font-weight: 800 !important; }
+
+label,
+button,
+input {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-weight: 400; }
+
+/*
+ * COLORS
+ */
+/*
+ * UNSET SOME BOOTSTRAP DEFAULTS
+ */
+body {
+  margin: 0; }
+
+/*
+ * LOGIN VIEW
+ */
+section.login {
+  height: 100vh;
+  min-height: 555px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #6969ec 0.1%, #1f1f70 100.2%); }
+  section.login .form-control {
+    margin: 0.5em 0; }
+  section.login .skip-login {
+    font-size: 0.75em;
+    color: #888;
+    padding-top: 0.5em;
+    text-align: center; }
+
+/*
+ * DASHBOARD
+ */
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(15em, 1fr) 5fr;
+  grid-template-rows: 150px auto;
+  min-height: 100vh; }
+
+.sidebar {
+  background: radial-gradient(circle farthest-corner at 10% 20%, #6969ec 0.1%, #1f1f70 100.2%);
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  position: sticky;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+  grid-column: 1;
+  grid-row: 1 / span 2; }
+  .sidebar .list-group {
+    width: 100%;
+    overflow: hidden; }
+  .sidebar li {
+    cursor: pointer; }
+
+.header {
+  grid-column: 2;
+  grid-row: 1;
+  background: #eee;
+  padding: 1em;
+  top: 0;
+  position: sticky;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: auto; }
+
+.content {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 1em; }
+
+.icon {
+  display: inline-flex;
+  width: 1.5em;
+  align-items: center;
+  justify-content: center; }
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/
