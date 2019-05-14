@@ -23047,7 +23047,7 @@ var HomeContent = function HomeContent() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 0:
 /*!*********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fdashboard&absolutePagePath=%2Fhome%2Falan%2Fprogramy%2Ffuero_games_task%2Fpages%2Fdashboard.js ***!
   \*********************************************************************************************************************************************/
@@ -23070,5 +23070,5 @@ module.exports = dll_1aef2d0bbc0d334d831c;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=dashboard.js.map
