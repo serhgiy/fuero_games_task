@@ -9,52 +9,61 @@ const bundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const purgecss = require("next-purgecss");
 const optimizedImages = require("next-optimized-images");
 
-module.exports = withPlugins([
-  [sass, {}],
+const isProd = process.env.NODE_ENV === "production";
 
-  // [
-  //   purgecss,
-  //   {
-  //     purgeCssPaths: ["pages/**/*", "sections/**/*", "components/**/*"],
-  //     purgeCss: {
-  //       whitelistPatterns: () => [/img-*/, /ig*/, /body/],
-  //       whitelist: ["body"]
-  //     }
-  //   }
-  // ],
-
-  nextSize,
-
+module.exports = withPlugins(
   [
-    bundleAnalyzer,
-    {
-      analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
-      analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
-      bundleAnalyzerConfig: {
-        server: {
-          analyzerMode: "static",
-          reportFilename: "../bundles/server.html"
-        },
-        browser: {
-          analyzerMode: "static",
-          reportFilename: "../bundles/client.html"
+    [sass, {}],
+
+    // [
+    //   purgecss,
+    //   {
+    //     purgeCssPaths: ["pages/**/*", "sections/**/*", "components/**/*"],
+    //     purgeCss: {
+    //       whitelistPatterns: () => [/img-*/, /ig*/, /body/],
+    //       whitelist: ["body"]
+    //     }
+    //   }
+    // ],
+
+    nextSize,
+
+    [
+      bundleAnalyzer,
+      {
+        analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
+        analyzeBrowser: ["browser", "both"].includes(
+          process.env.BUNDLE_ANALYZE
+        ),
+        bundleAnalyzerConfig: {
+          server: {
+            analyzerMode: "static",
+            reportFilename: "../bundles/server.html"
+          },
+          browser: {
+            analyzerMode: "static",
+            reportFilename: "../bundles/client.html"
+          }
         }
       }
-    }
-  ],
+    ],
 
-  [
-    optimizedImages,
+    [
+      optimizedImages,
 
-    {
-      mozjpeg: {
-        quality: 85
-      },
+      {
+        mozjpeg: {
+          quality: 85
+        },
 
-      webp: {
-        preset: "photo",
-        quality: 80
+        webp: {
+          preset: "photo",
+          quality: 80
+        }
       }
-    }
-  ]
-]);
+    ]
+  ],
+  {
+    assetPrefix: isProd ? "https://serhgiy.github.io" : ""
+  }
+);
